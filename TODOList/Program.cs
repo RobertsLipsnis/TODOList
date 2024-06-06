@@ -1,7 +1,10 @@
+using TODOList.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<TodoControllerHelpers>(); 
 
 var app = builder.Build();
 
