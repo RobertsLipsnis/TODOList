@@ -46,3 +46,19 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.form-container, .table-container {
+  background-color: #e5e5e5;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  overflow-y: auto;
+  height: 100%;
+  min-height: 500px;
+  max-height: 500px;
+  width: 100%;
+}
+
+.container-fluid .row [class^="col-"] {
+  padding: 10;
+}
