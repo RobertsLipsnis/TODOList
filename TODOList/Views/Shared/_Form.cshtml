@@ -1,0 +1,33 @@
+@using TODOList.Models.ViewModels
+@model TodoViewModel
+
+<form asp-action="Create" id="form-action" method="post" class="form-horizontal" role="form">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+            <input asp-for="Todo.Id" type="hidden" class="form-control" />
+            <label asp-for="Todo.Title"></label>
+            <input asp-for="Todo.Title" class="form-control" v-model="newTodoTitle" />
+            <label asp-for="Todo.Body"></label>
+            <textarea asp-for="Todo.Body" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10 mt-3 mb-5">
+            <input type="submit" id="form-button" class="btn btn-success" value="Add item" :disabled="newTodoTitle.trim() === ''" :hidden="hidden" />
+            <input type="submit" id="edit-button" class="btn btn-success" value="Update item" :hidden="true" />
+        </div>
+    </div>
+
+</form>
+
+<script>
+    var app = Vue.createApp({
+        data() {
+            return {
+                newTodoTitle: ''
+            }
+        }
+    }).mount('#form-action');
+</script>
